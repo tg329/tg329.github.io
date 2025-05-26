@@ -59,15 +59,14 @@ export default function Navbar() {
         <div
           id="navbar-menu"
           className={`
-    w-full md:w-auto md:flex
-    transform origin-top transition-transform duration-300 ease-in-out
-    ${isOpen ? "scale-y-100 opacity-100 pointer-events-auto bg-[#ededed] text-black" : "scale-y-0 opacity-0 pointer-events-none"}
-    md:scale-y-100 md:opacity-100 md:pointer-events-auto md:bg-transparent md:text-inherit
-    absolute md:static left-0 top-full md:top-auto
-    shadow md:shadow-none rounded-b-lg md:rounded-none min-w-[180px]
-  `}
+            w-full md:w-auto md:flex
+            transform origin-top transition-transform duration-300 ease-in-out
+            ${isOpen ? "scale-y-100 opacity-100 pointer-events-auto bg-[#ededed] text-black" : "scale-y-0 opacity-0 pointer-events-none"}
+            md:scale-y-100 md:opacity-100 md:pointer-events-auto md:bg-transparent md:text-inherit
+            absolute md:static left-0 top-full md:top-auto
+            shadow md:shadow-none rounded-b-lg md:rounded-none min-w-[180px]
+          `}
         >
-
           <ul
             className={`flex flex-col md:flex-row md:space-x-10 p-4 md:p-0 font-medium justify-center items-center w-full`}
           >
@@ -76,26 +75,21 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={`
-            relative block py-1 px-1 rounded transition duration-300 ease-in-out md:hover:bg-transparent
-            ${isActive(link.href)
-                      ? isOpen
-                        ? "text-black"
-                        : "text-white"
-                      : "text-inherit"
-                    }
-          `}
+                    relative block py-1 px-1 rounded transition duration-300 ease-in-out md:hover:bg-transparent
+                    text-inherit
+                  `}
                   onClick={() => setIsOpen(false)}
+                  aria-current={isActive(link.href) ? "page" : undefined}
                 >
                   {link.label}
                   <span
                     className={`
-              pointer-events-none absolute left-0 bottom-0 w-full h-[2px]
-              bg-gradient-to-r from-black to-black
-              scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in
-              origin-left ${isActive(link.href) && isOpen ? "scale-x-100" : ""
-                      } md:from-white md:to-white md:${isActive(link.href) ? "scale-x-100" : ""
-                      }
-            `}
+                      pointer-events-none absolute left-0 bottom-0 w-full h-[2px]
+                      bg-gradient-to-r from-black to-black
+                      scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
+                      ${isActive(link.href) ? "scale-x-100" : ""}
+                      md:from-white md:to-white md:group-hover:scale-x-100
+                    `}
                     aria-hidden="true"
                   />
                 </Link>
@@ -103,7 +97,6 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-
       </div>
     </nav>
   );
