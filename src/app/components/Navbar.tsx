@@ -1,11 +1,19 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, []);
 
   const navLinks = [
     { href: "/work", label: "Work" },
@@ -14,28 +22,28 @@ export default function Navbar() {
     { href: "/resume", label: "Resume" }
   ];
 
-  const getLinkClass = (href: string) =>
-    [
-      "block py-1 px-1 rounded transition duration-300 ease-in-out",
-      "md:hover:bg-transparent hover:underline hover:underline-offset-4",
-      pathname === href ? "underline underline-offset-4" : ""
-    ].join(" ");
+  const isActive = (href: string) => pathname === href;
 
   return (
     <nav className="w-full z-50 backdrop-blur">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
-        <Link href="/" className="flex items-center space-x-2 text-2xl font-semibold text-gray-900 dark:text-white hover:scale-110 transition">
+        <Link
+          href="/"
+          className="flex items-center space-x-2 text-2xl font-semibold text-gray-900 dark:text-white hover:scale-110 transition"
+        >
           <span>高</span>
         </Link>
+
         {/* Hamburger */}
         <button
           onClick={() => setIsOpen((v) => !v)}
           type="button"
-          className="inline-flex items-center w-5 h-5 justify-center text-gray-700 dark:text-gray-300 rounded-lg md:hidden hover:scale-110 transition"
+          className="inline-flex items-center w-6 h-6 justify-center text-gray-700 dark:text-gray-300 rounded-lg md:hidden hover:scale-110 transition"
           aria-controls="navbar-menu"
           aria-expanded={isOpen}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          <span className="sr-only">Open main menu</span>
+          <span className="sr-only">Toggle navigation</span>
           {isOpen ? (
             <svg fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 20 20">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -46,29 +54,56 @@ export default function Navbar() {
             </svg>
           )}
         </button>
+
         {/* Menu */}
         <div
           id="navbar-menu"
-          className={`w-full md:w-auto md:flex transition duration-300 ease-in-out origin-top ${isOpen
-            ? "scale-y-100 opacity-100 pointer-events-auto"
-            : "scale-y-0 opacity-0 pointer-events-none"
-            } md:scale-y-100 md:opacity-100 md:pointer-events-auto absolute md:static left-0 top-full md:top-auto dark:bg-gray-900/95 md:bg-transparent md:dark:bg-transparent shadow md:shadow-none rounded-b-lg md:rounded-none`}
-          style={{ minWidth: "180px" }}
+          className={`
+    w-full md:w-auto md:flex
+    transform origin-top transition-transform duration-300 ease-in-out
+    ${isOpen ? "scale-y-100 opacity-100 pointer-events-auto bg-[#ededed] text-black" : "scale-y-0 opacity-0 pointer-events-none"}
+    md:scale-y-100 md:opacity-100 md:pointer-events-auto md:bg-transparent md:text-inherit
+    absolute md:static left-0 top-full md:top-auto
+    shadow md:shadow-none rounded-b-lg md:rounded-none min-w-[180px]
+  `}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-10 p-4 md:p-0 md:mt-0 font-medium justify-center items-center w-full">
+
+          <ul
+            className={`flex flex-col md:flex-row md:space-x-10 p-4 md:p-0 font-medium justify-center items-center w-full`}
+          >
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} className="relative group">
                 <Link
                   href={link.href}
-                  className={getLinkClass(link.href)}
+                  className={`
+            relative block py-1 px-1 rounded transition duration-300 ease-in-out md:hover:bg-transparent
+            ${isActive(link.href)
+                      ? isOpen
+                        ? "text-black"
+                        : "text-white"
+                      : "text-inherit"
+                    }
+          `}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
+                  <span
+                    className={`
+              pointer-events-none absolute left-0 bottom-0 w-full h-[2px]
+              bg-gradient-to-r from-black to-black
+              scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in
+              origin-left ${isActive(link.href) && isOpen ? "scale-x-100" : ""
+                      } md:from-white md:to-white md:${isActive(link.href) ? "scale-x-100" : ""
+                      }
+            `}
+                    aria-hidden="true"
+                  />
                 </Link>
               </li>
             ))}
           </ul>
         </div>
+
       </div>
     </nav>
   );
