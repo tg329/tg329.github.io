@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full z-50 backdrop-blur">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
+      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-6">
         <Link
           href="/"
           className="flex items-center space-x-2 text-2xl font-semibold hover:scale-110 transition"
