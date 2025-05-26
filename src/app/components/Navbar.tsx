@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
         <Link
           href="/"
-          className="flex items-center space-x-2 text-2xl font-semibold text-gray-900 dark:text-white hover:scale-110 transition"
+          className="flex items-center space-x-2 text-2xl font-semibold hover:scale-110 transition"
         >
           <span>高</span>
         </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
         <button
           onClick={() => setIsOpen((v) => !v)}
           type="button"
-          className="inline-flex items-center w-6 h-6 justify-center text-gray-700 dark:text-gray-300 rounded-lg md:hidden hover:scale-110 transition"
+          className="inline-flex items-center w-6 h-6 justify-center rounded-lg md:hidden hover:scale-110 transition"
           aria-controls="navbar-menu"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
