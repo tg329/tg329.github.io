@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="w-full bg-white text-black border-t border-gray-200 py-4 mt-auto">
+        <footer className="w-full bg-white text-black border-t border-gray-200 p-4 mt-5">
             <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
                 <span>
                     © {new Date().getFullYear()} Tiffany (Shihan) Gao

@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Box from "./components/Box";
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
       <Navbar />
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start p-10">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start mt-35 mb-35 my-10 p-2">
         <h1 className="text-4xl font-bold tracking-[-.01em]">
-          Hi I'm
+          Hi, I'm
         </h1>
         <h1 className="text-4xl font-bold tracking-[-.01em] flex items-center gap-2">
           Tiffany (Shihan) Gao!
@@ -25,6 +26,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            Click for a surprise!
             <Image
               className="dark:invert"
               src="/vercel.svg"
@@ -32,19 +34,38 @@ export default function Home() {
               width={20}
               height={20}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
           </a>
         </div>
-
       </main>
+
+      <h1 className="text-2xl font-bold tracking-[-.01em]">
+        Featured Works
+      </h1>
+      <div className="w-full px-8">
+        <div className="h-[1px] bg-white mt-2 mb-4"></div>
+      </div>
+
+      <div className="flex gap-4 items-center flex-col sm:flex-row m-10">
+        <Box
+          href="/work/sample-project"
+          imageSrc="/images/sample.jpg" // Make sure this image exists in your public/images folder, or use any placeholder image URL
+          imageAlt="Sample Project"
+          title="Sample Project"
+          tags={["UI", "React", "Next.js"]}
+          description="This is a short description of the sample project. You can customize this text."
+        />
+
+        <Box
+          href="/work/sample-project"
+          imageSrc="/images/sample.jpg" // Make sure this image exists in your public/images folder, or use any placeholder image URL
+          imageAlt="Sample Project"
+          title="Sample Project"
+          tags={["UI", "React", "Next.js"]}
+          description="This is a short description of the sample project. You can customize this text."
+        />
+
+      </div>
+
       <div className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
       </div>
       <Footer />
