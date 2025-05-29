@@ -18,24 +18,6 @@ export default function Home() {
         <p className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           I'm an aspiring designer & developer, currently studying at Cornell University.
         </p>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Click for a surprise!
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-          </a>
-        </div>
       </main>
 
       <h1 className="text-2xl font-bold tracking-[-.01em]">
@@ -48,22 +30,20 @@ export default function Home() {
       <div className="flex gap-4 items-center flex-col sm:flex-row m-10">
         <Box
           href="/work/sample-project"
-          imageSrc="/images/sample.jpg" // Make sure this image exists in your public/images folder, or use any placeholder image URL
-          imageAlt="Sample Project"
-          title="Sample Project"
-          tags={["UI", "React", "Next.js"]}
-          description="This is a short description of the sample project. You can customize this text."
+          imageSrc="/images/ssb-cover.png" 
+          title="Sweet, Sweet Betrayal"
+          tags={["Game Design", "UX/UI", "Animation"]}
+          description="Sabotage. Race. Win. In this adventurous party platformer, the jungle is your playground!"
         />
 
         <Box
           href="/work/sample-project"
-          imageSrc="/images/sample.jpg" // Make sure this image exists in your public/images folder, or use any placeholder image URL
-          imageAlt="Sample Project"
-          title="Sample Project"
-          tags={["UI", "React", "Next.js"]}
-          description="This is a short description of the sample project. You can customize this text."
+          imageSrc="/images/rabbeat-cover.png" 
+          imageAlt="RabBeat"
+          title="RabBeat"
+          tags={["Game Design", "UX/UI", "Animation"]}
+          description="You must use your musical powers to rescue your friends from an evil DJ scientist!"
         />
-
       </div>
 
       <div className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
