@@ -38,7 +38,9 @@ export default function Work() {
 
             <div className="flex gap-4 items-center flex-col sm:flex-row mb-5">
                 <Box
-                    href="/work/sample-project"
+                    href="https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/sweetsweetbetrayal/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     imageSrc="/images/ssb-cover.png"
                     title="Sweet, Sweet Betrayal"
                     tags={["Game Design", "UX/UI", "Animation"]}
@@ -69,7 +71,7 @@ export default function Work() {
                 />
 
                 <Box
-                    href="/work/sample-project"
+                    href="/nexus"
                     imageSrc="/images/turtle-cover.png"
                     title="Cornell Nexus Graphic Design"
                     tags={["Graphic Design", "Marketing", "Social Media"]}
@@ -80,7 +82,7 @@ export default function Work() {
 
             <div className="flex gap-4 items-center flex-col sm:flex-row mb-10">
                 <Box
-                    href="/work/sample-project"
+                    href="/acsu"
                     imageSrc="/images/acsu-cover.png"
                     title="Cornell ACSU Graphic Design"
                     tags={["Graphic Design", "Marketing", "Social Media"]}
