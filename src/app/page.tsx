@@ -15,8 +15,8 @@ export default function Home() {
           Tiffany (Shihan) Gao!
           <span className="inline-block animate-bounce ml-2" role="img" aria-label="star">☆</span>
         </h1>
-        <p className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          An aspiring designer & developer, currently studying IS at Cornell.
+        <p className="text-center sm:text-left">
+          An aspiring designer & developer, currently studying Information Science at Cornell.
         </p>
       </main>
 

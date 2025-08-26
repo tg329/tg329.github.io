@@ -25,7 +25,7 @@ export default function Box({
     return (
         <Link
             href={href}
-            className="block max-w-[480px] max-h-90 w-full rounded-lg transition-transform duration-200 ease-in-out overflow-hidden bg-white transform hover:scale-101 text-black break-words"
+            className="block max-w-[480px] max-h-95 w-full rounded-lg transition-transform duration-200 ease-in-out overflow-hidden bg-white transform hover:scale-101 text-black break-words"
             {...(target ? { target } : {})}
             {...(rel ? { rel } : {})}
         >
@@ -45,7 +45,7 @@ export default function Box({
                         {tags.map((tag) => (
                             <span
                                 key={tag}
-                                className="bg-black text-white text-xs px-2 py-0.5 rounded"
+                                className="bg-black text-white text-sm px-2 py-0.5 rounded"
                             >
                                 {tag}
                             </span>

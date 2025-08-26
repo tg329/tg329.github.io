@@ -8,12 +8,12 @@ export default function Work() {
         <div className="grid grid-rows-[auto_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
             <Navbar />
             <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start pt-10">
-                <h1 className="text-2xl font-bold tracking-[-.01em] mb-6">
-                    All Works
+                <h1 className="text-2xl font-bold tracking-[-.01em]">
+                    All Work
                 </h1>
             </main>
 
-            <div className="flex gap-4 items-center flex-col sm:flex-row m-5">
+            <div className="flex gap-4 items-center flex-col sm:flex-row mb-5">
                 <Box
                     href="https://studentoutcomes.onrender.com/"
                     target="_blank"
@@ -21,8 +21,7 @@ export default function Work() {
                     imageSrc="/images/outcomes.png"
                     title="Student Outcomes Visualization"
                     tags={["Data Visualization", "D3.js", "Web Design"]}
-                    description="Visualizing unemployment rates and job/wage outcomes based on student majors
-                    ."
+                    description="Visualizing job and wage outcomes based on student majors. Dataset powered by the NY Federal Reserve."
                 />
 
                 <Box
@@ -33,11 +32,11 @@ export default function Work() {
                     imageAlt="Barhop"
                     title="Boston Barhop Visualization"
                     tags={["Data Visualization", "D3.js", "Web Design"]}
-                    description="Visualizing restaurants through a barhopping planner, featuring map APIs and filters. Powered by Yelp’s dataset."
+                    description="Visualizing a barhopping planner for Boston restaurants, featuring a map API and filters. Dataset powered by Yelp."
                 />
             </div>
 
-            <div className="flex gap-4 items-center flex-col sm:flex-row">
+            <div className="flex gap-4 items-center flex-col sm:flex-row mb-5">
                 <Box
                     href="/work/sample-project"
                     imageSrc="/images/ssb-cover.png"
@@ -47,24 +46,24 @@ export default function Work() {
                 />
 
                 <Box
-                    href="/work/sample-project"
+                    href="/rabbeat"
                     imageSrc="/images/rabbeat-cover.png"
-                    imageAlt="RabBeat"
-                    title="RabBeat"
+                    imageAlt="RABBEAT"
+                    title="RABBEAT"
                     tags={["Game Design", "UX/UI", "Animation"]}
-                    description="You must use your musical powers to rescue your friends from an evil DJ scientist!"
+                    description="As Synth the Rabbit, you must use your musical powers to rescue your friends from an evil DJ scientist!"
                 />
             </div>
 
 
-            <div className="flex gap-4 items-center flex-col sm:flex-row m-5">
+            <div className="flex gap-4 items-center flex-col sm:flex-row mb-5">
                 <Box
                     href="https://medium.com/@tg329/discord-server-tags-optimizing-server-discovery-ux-case-study-1af78f37c55e"
                     target="_blank"
                     rel="noopener noreferrer"
                     imageSrc="/images/discord-cover.png"
-                    imageAlt="Discord Server Tags"
-                    title="Discord Server Tags"
+                    imageAlt="Optimizing Discovery Through Discord Server Tags"
+                    title="Optimizing Discovery Through Discord Server Tags"
                     tags={["Case Study", "UX/UI", "Product Thinking"]}
                     description="Improving the discoverability of Discord servers through a tagging/filtering system."
                 />
@@ -72,7 +71,7 @@ export default function Work() {
                 <Box
                     href="/work/sample-project"
                     imageSrc="/images/turtle-cover.png"
-                    title="Nexus Graphic Design"
+                    title="Cornell Nexus Graphic Design"
                     tags={["Graphic Design", "Marketing", "Social Media"]}
                     description="Designed with Canva for Cornell's autonomous robot team working to filter microplastics on beaches."
                 />
@@ -95,14 +94,24 @@ export default function Work() {
                     imageSrc="/images/catbun-cover.png"
                     imageAlt="Catbun Art Database"
                     title="Art Database Video Demo"
-                    tags={["Web Design", "UX/UI", "Fullstack (HTML, CSS, JavaScript, PHP, SQL)"]}
+                    tags={["Web Design", "UX/UI", "Fullstack Dev"]}
                     description="Art database with admin log-in, tag filter system, and upload/edit functions."
                 />
+            </div>
+
+            <div className="text-center text-sm mb-10 flex flex-col items-center">
+                <span className="mb-2">...and this website!</span>
+                <div className="flex flex-wrap gap-2 justify-center">
+                    <span className="bg-white text-black text-sm px-2 py-0.5 rounded">Web Design</span>
+                    <span className="bg-white text-black text-sm px-2 py-0.5 rounded">UX/UI</span>
+                    <span className="bg-white text-black text-sm px-2 py-0.5 rounded">Frontend Dev</span>
+                </div>
             </div>
 
             <div className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
             </div>
             <Footer />
+            
         </div>
     );
 }
