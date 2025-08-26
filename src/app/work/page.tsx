@@ -13,6 +13,30 @@ export default function Work() {
                 </h1>
             </main>
 
+            <div className="flex gap-4 items-center flex-col sm:flex-row m-5">
+                <Box
+                    href="https://studentoutcomes.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    imageSrc="/images/outcomes.png"
+                    title="Student Outcomes Visualization"
+                    tags={["Data Visualization", "D3.js", "Web Design"]}
+                    description="Visualizing unemployment rates and job/wage outcomes based on student majors
+                    ."
+                />
+
+                <Box
+                    href="https://barhop.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    imageSrc="/images/barhop.png"
+                    imageAlt="Barhop"
+                    title="Boston Barhop Visualization"
+                    tags={["Data Visualization", "D3.js", "Web Design"]}
+                    description="Visualizing restaurants through a barhopping planner, featuring map APIs and filters. Powered by Yelp’s dataset."
+                />
+            </div>
+
             <div className="flex gap-4 items-center flex-col sm:flex-row">
                 <Box
                     href="/work/sample-project"

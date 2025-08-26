@@ -15,7 +15,7 @@ export default function Home() {
           <span className="inline-block animate-bounce" role="img" aria-label="star">☆</span>
         </h1>
         <p className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          I'm an aspiring designer & developer, currently studying at Cornell University.
+          I'm an aspiring designer & developer, currently studying Information Science at Cornell University.
         </p>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">

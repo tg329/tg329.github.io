@@ -29,17 +29,17 @@ export default function Box({
             {...(target ? { target } : {})}
             {...(rel ? { rel } : {})}
         >
-            <div className="relative w-full h-50">
+            <div className="relative w-full h-55">
                 <Image
                     src={imageSrc}
                     alt={imageAlt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 500px) 100vw, 400px"
+                    sizes="(max-width: 500px) 100vw, 500px"
                 />
             </div>
             <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{title}</h3>
+                <h3 className="font-semibold mb-2">{title}</h3>
                 {tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-3">
                         {tags.map((tag) => (
