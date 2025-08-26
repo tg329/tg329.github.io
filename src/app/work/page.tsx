@@ -9,7 +9,7 @@ export default function Work() {
             <Navbar />
             <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start pt-10">
                 <h1 className="text-2xl font-bold tracking-[-.01em]">
-                    All Work
+                    Work
                 </h1>
             </main>
 

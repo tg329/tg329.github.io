@@ -11,11 +11,11 @@ export default function Play() {
     return (
         <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
             <Navbar />
-            <main className="flex flex-col gap-8 items-center pt-10 w-full">
-                <h1 className="text-2xl font-bold tracking-[-.01em] text-center w-full">
+            <main className="flex flex-col gap-4 items-center pt-10 w-full">
+                <h1 className="text-2xl font-bold text-center w-full">
                     Play
                 </h1>
-                <div className="big-container flex flex-row w-full justify-center" style={{ maxWidth: 1000 }}>
+                <div className="big-container flex flex-row w-full justify-center mb-5" style={{ maxWidth: 1000 }}>
                     {artColumns.map((col, colIdx) => (
                         <div key={colIdx} className="flex flex-col">
                             {col.map((src, idx) => (

@@ -10,7 +10,7 @@ export default function acsu() {
             <Navbar />
             <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start pt-10 w-full pb-2">
                 <h1 className="text-2xl font-bold tracking-[-.01em] text-center w-full">
-                    Nexus Graphic Design
+                    ACSU Graphic Design
                 </h1>
 
                 <div className="flex flex-col gap-6 items-center w-full mb-10">
