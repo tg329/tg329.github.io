@@ -13,7 +13,7 @@ export default function Nexus() {
                     Nexus Graphic Design
                 </h1>
 
-                <div className="flex flex-col gap-6 items-center w-full mb-10">
+                <div className="flex flex-col gap-3 items-center w-full mb-10">
                     <Images images={[
                         "/images/nexusone.png",
                         "/images/nexustwo.png",

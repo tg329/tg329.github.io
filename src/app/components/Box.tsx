@@ -25,19 +25,20 @@ export default function Box({
     return (
         <Link
             href={href}
-            className="block max-w-[480px] max-h-95 w-full rounded-lg transition-transform duration-200 ease-in-out overflow-hidden bg-white transform hover:scale-101 text-black break-words"
+            className="block max-w-[450px] w-full transition-transform duration-200 ease-in-out overflow-hidden bg-white transform hover:scale-101 text-black"
             {...(target ? { target } : {})}
             {...(rel ? { rel } : {})}
         >
-            <div className="relative w-full h-55">
+            <div className="relative w-full h-50">
                 <Image
                     src={imageSrc}
                     alt={imageAlt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 500px) 100vw, 500px"
+                    sizes="(max-width: 1000px) 100vw, 100px"
                 />
             </div>
+
             <div className="p-4">
                 <h3 className="font-semibold mb-2">{title}</h3>
                 {tags.length > 0 && (

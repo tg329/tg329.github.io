@@ -5,13 +5,13 @@ interface ImagesProps {
 }
 
 const Images: React.FC<ImagesProps> = ({ images }) => (
-    <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
         {images.map((src, idx) => (
             <img
                 key={idx}
                 src={src}
                 alt={`Image ${idx + 1}`}
-                style={{ width: '100%', maxWidth: '300px', height: 'auto', borderRadius: '8px' }}
+                style={{ width: '100%', maxWidth: '300px', height: 'auto' }}
             />
         ))}
     </div>

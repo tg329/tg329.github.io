@@ -19,84 +19,120 @@ export default function Navbar() {
     { href: "/work", label: "Work" },
     { href: "/play", label: "Play" },
     { href: "/about", label: "About" },
-    { href: "/resume", label: "Resume" }
+    { href: "/resume", label: "Resume" },
   ];
 
   const isActive = (href: string) => pathname === href;
 
   return (
     <nav className="w-full z-50 backdrop-blur">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-6">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+        {/* Logo */}
         <Link
           href="/"
-          className="flex items-center space-x-2 text-2xl font-semibold hover:scale-110 transition"
+          className="flex items-center space-x-2 text-2xl hover:scale-105 transition"
         >
           <span>高</span>
         </Link>
 
-        {/* Hamburger */}
+        {/* Hamburger (mobile only) */}
         <button
           onClick={() => setIsOpen((v) => !v)}
           type="button"
-          className="inline-flex items-center w-6 h-6 justify-center rounded-lg md:hidden hover:scale-110 transition"
+          className="inline-flex items-center w-6 h-6 justify-center rounded-lg md:hidden hover:scale-110 transition focus:outline-none focus:ring-0"
           aria-controls="navbar-menu"
           aria-expanded={isOpen}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <span className="sr-only">Toggle navigation</span>
           {isOpen ? (
-            <svg fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 20 20">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            <svg
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 20 20"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
-            <svg fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 20 20">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 20 20"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           )}
         </button>
 
-        {/* Menu */}
-        <div
-          id="navbar-menu"
-          className={`
-            w-full md:w-auto md:flex
-            transform origin-top transition-transform duration-300 ease-in-out
-            ${isOpen ? "scale-y-100 opacity-100 pointer-events-auto bg-[#ededed] text-black" : "scale-y-0 opacity-0 pointer-events-none"}
-            md:scale-y-100 md:opacity-100 md:pointer-events-auto md:bg-transparent md:text-inherit
-            absolute md:static left-0 top-full md:top-auto
-            shadow md:shadow-none rounded-b-lg md:rounded-none min-w-[100px]
-          `}
-        >
-          <ul
-           className="flex flex-col md:flex-row md:space-x-10 p-2 md:p-0 font-medium text-sm justify-center items-center w-full"
->
-            {navLinks.map((link) => (
-              <li key={link.href} className="relative group">
-                <Link
-                  href={link.href}
-                  className={`
-                    relative block py-1 px-1 rounded transition duration-300 ease-in-out md:hover:bg-transparent
-                    text-inherit
-                  `}
-                  onClick={() => setIsOpen(false)}
-                  aria-current={isActive(link.href) ? "page" : undefined}
-                >
-                  {link.label}
-                  <span
-                    className={`
-                      pointer-events-none absolute left-0 bottom-0 w-full h-[2px]
-                      bg-gradient-to-r from-black to-black
-                      scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
-                      ${isActive(link.href) ? "scale-x-100" : ""}
-                      md:from-white md:to-white md:group-hover:scale-x-100
-                    `}
-                    aria-hidden="true"
-                  />
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-10">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative group transition duration-300"
+              aria-current={isActive(link.href) ? "page" : undefined}
+            >
+              {link.label}
+              <span
+                className={`
+                  pointer-events-none absolute left-0 bottom-0 w-full h-[1px]
+                  bg-gradient-to-r from-white to-white
+                  scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
+                  ${isActive(link.href) ? "scale-x-100" : ""}
+                `}
+                aria-hidden="true"
+              />
+            </Link>
+          ))}
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        id="navbar-menu"
+        className={`
+          md:hidden w-full absolute left-0 top-full
+          transform origin-top transition-transform duration-300 ease-in-out
+          ${isOpen ? "scale-y-100 opacity-100 pointer-events-auto bg-[#ededed] text-black" : "scale-y-0 opacity-0 pointer-events-none"}
+          shadow rounded-b-lg min-w-[180px]
+        `}
+      >
+        <ul className="flex flex-col items-center p-2 space-y-2">
+          {navLinks.map((link) => (
+            <li key={link.href} className="w-full text-center relative group">
+              <Link
+                href={link.href}
+                className="relative inline-block py-2 transition"
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive(link.href) ? "page" : undefined}
+              >
+                {link.label}
+                <span
+                  className={`
+                    pointer-events-none absolute left-0 bottom-2 w-full h-[1px]
+                    bg-gradient-to-r from-black to-black
+                    scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
+                    ${isActive(link.href) ? "scale-x-100" : ""}
+                  `}
+                  aria-hidden="true"
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

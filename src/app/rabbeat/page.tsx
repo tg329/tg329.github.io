@@ -39,9 +39,9 @@ export default function Rabbeat() {
                 </div>
 
                 <div className="flex justify-center items-center gap-6 w-full">
-                    <img width={120} src="/images/bear.gif" alt="Bear" className="h-auto mb-2" />
-                    <img width={200} src="/images/bat.gif" alt="Bat" className="h-auto mt-5" />
-                    <img width={120} src="/images/hedge.gif" alt="Hedgehog" className="h-auto mt-4" />
+                    <img width={120} src="/images/bear.gif" alt="Bear" className="h-auto" />
+                    <img width={200} src="/images/bat.gif" alt="Bat" className="h-auto mt-6" />
+                    <img width={120} src="/images/hedge.gif" alt="Hedgehog" className="h-auto mt-5" />
                 </div>
             </main>
             <Footer />

@@ -1,11 +1,11 @@
 export default function Footer() {
     return (
-        <footer className="w-full bg-white text-black border-t border-gray-200 md:space-x-10 p-4 font-[family-name:var(--font-geist-sans)]">
-            <div className="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-between text-sm">
+        <footer className="w-full bg-white text-black">
+            <div className="max-w-screen-xl mx-auto my-auto flex flex-wrap items-center justify-between p-2">
                 <span>
                     © {new Date().getFullYear()} Tiffany (Shihan) Gao
                 </span>
-                <div className="flex gap-4">
+                <div className="flex gap-8">
                     <a
                         href="mailto:tg329@cornell.edu"
                         className="hover:underline hover:text-gray-700 hover:underline-offset-4 transition"

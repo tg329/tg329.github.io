@@ -44,25 +44,25 @@ body {
 }
 
 .wiggle:hover, .cat:hover {
-    animation: wiggle 1s;
+    animation: wiggle 0.8s;
     animation-iteration-count: infinite;
 }
 
 @keyframes wiggle {
 
-    50% {
+    25% {
         transform: translate(1px, 1px) rotate(0deg);
     }
 
-    70% {
+    50% {
         transform: translate(5.5px, 5.5px) rotate(-1deg);
     }
 
-    80% {
+    75% {
         transform: translate(0px, 0px) rotate(-1deg);
     }
 
-    90% {
+    100% {
         transform: translate(1px, 1px) rotate(0deg);
     }
 }

@@ -9,19 +9,19 @@ const artColumns = [
 
 export default function Play() {
     return (
-        <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+        <div className="grid grid-rows-[auto_1fr_20px] items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
             <Navbar />
             <main className="flex flex-col gap-4 items-center pt-10 w-full">
                 <h1 className="text-2xl font-bold text-center w-full">
                     Play
                 </h1>
-                <div className="big-container flex flex-row w-full justify-center mb-5" style={{ maxWidth: 1000 }}>
+                <div className="big-container flex flex-row w-full justify-center mb-10" style={{ maxWidth: 1000 }}>
                     {artColumns.map((col, colIdx) => (
-                        <div key={colIdx} className="flex flex-col">
+                        <div key={colIdx} className="flex flex-col gap-3">
                             {col.map((src, idx) => (
                                 <figure
                                     key={idx}
-                                    style={{ margin: "10px 0px 0px 10px" }}
+                                    style={{ margin: "0px 0px 0px 10px" }}
                                 >
                                     <img
                                         src={src}
@@ -34,8 +34,8 @@ export default function Play() {
                         </div>
                     ))}
                 </div>
-                <Footer />
             </main>
+            <Footer />
         </div>
     );
 }
