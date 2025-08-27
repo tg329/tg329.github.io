@@ -19,7 +19,7 @@ export default function Navbar() {
     { href: "/work", label: "Work" },
     { href: "/play", label: "Play" },
     { href: "/about", label: "About" },
-    { href: "/resume", label: "Resume" },
+    { href: "files/TiffanyGaoResume.pdf", label: "Resume", target: "_blank", rel: "noopener noreferrer" },
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -78,25 +78,46 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="relative group transition duration-300"
-              aria-current={isActive(link.href) ? "page" : undefined}
-            >
-              {link.label}
-              <span
-                className={`
-                  pointer-events-none absolute left-0 bottom-0 w-full h-[1px]
-                  bg-gradient-to-r from-white to-white
-                  scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
-                  ${isActive(link.href) ? "scale-x-100" : ""}
-                `}
-                aria-hidden="true"
-              />
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isExternal = link.target === "_blank";
+            return isExternal ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group transition duration-300"
+              >
+                {link.label}
+                <span
+                  className={`
+                    pointer-events-none absolute left-0 bottom-0 w-full h-[1px]
+                    bg-gradient-to-r from-white to-white
+                    scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
+                  `}
+                  aria-hidden="true"
+                />
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative group transition duration-300"
+                aria-current={isActive(link.href) ? "page" : undefined}
+              >
+                {link.label}
+                <span
+                  className={`
+                    pointer-events-none absolute left-0 bottom-0 w-full h-[1px]
+                    bg-gradient-to-r from-white to-white
+                    scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
+                    ${isActive(link.href) ? "scale-x-100" : ""}
+                  `}
+                  aria-hidden="true"
+                />
+              </Link>
+            );
+          })}
         </div>
       </div>
 
@@ -111,27 +132,48 @@ export default function Navbar() {
         `}
       >
         <ul className="flex flex-col items-center p-2 space-y-2">
-          {navLinks.map((link) => (
-            <li key={link.href} className="w-full text-center relative group">
-              <Link
-                href={link.href}
-                className="relative inline-block py-2 transition"
-                onClick={() => setIsOpen(false)}
-                aria-current={isActive(link.href) ? "page" : undefined}
-              >
-                {link.label}
-                <span
-                  className={`
-                    pointer-events-none absolute left-0 bottom-2 w-full h-[1px]
-                    bg-gradient-to-r from-black to-black
-                    scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
-                    ${isActive(link.href) ? "scale-x-100" : ""}
-                  `}
-                  aria-hidden="true"
-                />
-              </Link>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isExternal = link.target === "_blank";
+            return (
+              <li key={link.href} className="w-full text-center relative group">
+                {isExternal ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative inline-block py-2 transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                    <span
+                      className={`
+                        pointer-events-none absolute left-0 bottom-2 w-full h-[1px]
+                        bg-gradient-to-r from-black to-black
+                        scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
+                      `}
+                      aria-hidden="true"
+                    />
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="relative inline-block py-2 transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                    <span
+                      className={`
+                        pointer-events-none absolute left-0 bottom-2 w-full h-[1px]
+                        bg-gradient-to-r from-black to-black
+                        scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-in origin-left
+                      `}
+                      aria-hidden="true"
+                    />
+                  </Link>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>

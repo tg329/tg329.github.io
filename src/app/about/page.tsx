@@ -37,7 +37,7 @@ export default function About() {
               I've had the pleasure of working with organizations like the {" "}
               <strong>New York City Life Insurance Company</strong>,{" "}
               <strong>New York City Economic Development Corporation</strong>,{" "} and the 
-              <strong>Bronx Cooperative Development Initiative</strong>.
+              <strong> Bronx Cooperative Development Initiative</strong>.
             </p>
             <p>
               If you're interested in web development, data science, game development, or design, let's connect and explore ways we can collaborate!
